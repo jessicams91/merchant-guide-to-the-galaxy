@@ -1,39 +1,71 @@
-# Merchant::Guide::To::Galaxy
+# Merchant Guide To The Galaxy
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/merchant/guide/to/galaxy`. To experiment with that code, run `bin/console` for an interactive prompt.
+Problem:
+You decided to give up on earth after the latest financial collapse left 99.99% of the earth's
+population with 0.01% of the wealth. Luckily, with the scant sum of money that is left in your
+account, you are able to afford to rent a spaceship, leave earth, and fly all over the galaxy to sell
+common metals and dirt (which apparently is worth a lot).
+Buying and selling over the galaxy requires you to convert numbers and units, and you decided
+to write a program to help you.
+The numbers used for intergalactic transactions follows similar convention to the roman
+numerals and you have painstakingly collected the appropriate translation between them.
+Roman numerals are based on seven symbols
 
-TODO: Delete this and the text above, and describe your gem
+Symbol Value
+I 1
+V 5
+X 10
+L 50
+C 100
+D 500
+M 1,000
 
-## Installation
+Numbers are formed by combining symbols together and adding the values. For example, MMVI
+is 1000 + 1000 + 5 + 1 = 2006. Generally, symbols are placed in order of value, starting with the
+largest values. When smaller values precede larger values, the smaller values are subtracted
+from the larger values, and the result is added to the total. For example MCMXLIV = 1000 +
+(1000 − 100) + (50 − 10) + (5 − 1) = 1944.
+The symbols "I", "X", "C", and "M" can be repeated three times in succession, but no more. (They
+may appear four times if the third and fourth are separated by a smaller value, such as XXXIX.)
+"D", "L", and "V" can never be repeated.
+"I" can be subtracted from "V" and "X" only. "X" can be subtracted from "L" and "C" only. "C" can
+be subtracted from "D" and "M" only. "V", "L", and "D" can never be subtracted.
+Only one small-value symbol may be subtracted from any large-value symbol.
+A number written in [16]Arabic numerals can be broken into digits. For example, 1903 is
+composed of 1, 9, 0, and 3. To write the Roman numeral, each of the non-zero digits should be
+treated separately. Inthe above example, 1,000 = M, 900 = CM, and 3 = III. Therefore, 1903 =
+MCMIII.
 
-Add this line to your application's Gemfile:
+Input to your program consists of lines of text detailing your notes on the conversion between
+intergalactic units and roman numerals.
+You are expected to handle invalid queries appropriately.
 
-```ruby
-gem 'merchant-guide-to-galaxy'
-```
+Test input:
+glob is I
+prok is V
+pish is X
+tegj is L
+glob glob Silver is 34 Credits
+glob prok Gold is 57800 Credits
+pish pish Iron is 3910 Credits
+how much is pish tegj glob glob ?
+how many Credits is glob prok Silver ?
+how many Credits is glob prok Gold ?
+how many Credits is glob prok Iron ?
+how much wood could a woodchuck chuck if a woodchuck could chuck wood ?
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install merchant-guide-to-galaxy
+Test Output:
+pish tegj glob glob is 42
+glob prok Silver is 68 Credits
+glob prok Gold is 57800 Credits
+glob prok Iron is 782 Credits
+I have no idea what you are talking about
 
 ## Usage
 
-TODO: Write usage instructions here
+Configuration:
+Please run bin/setup to install gems
+Change input.txt at will
 
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/merchant-guide-to-galaxy/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+How to use:
+ruby galaxy.rb input.txt
