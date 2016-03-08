@@ -1,6 +1,20 @@
 # Merchant Guide To The Galaxy
 
-Problem:
+This is the solution in Ruby for the problem below
+also available on: https://github.com/jessicams91/merchant-guide-to-the-galaxy
+
+## Usage
+
+Configuration:
+Change input.txt at will
+
+To run this application:
+ruby solution.rb
+
+the application reads input.txt automatically
+
+## Description
+
 You decided to give up on earth after the latest financial collapse left 99.99% of the earth's
 population with 0.01% of the wealth. Luckily, with the scant sum of money that is left in your
 account, you are able to afford to rent a spaceship, leave earth, and fly all over the galaxy to sell
@@ -60,12 +74,3 @@ glob prok Silver is 68 Credits
 glob prok Gold is 57800 Credits
 glob prok Iron is 782 Credits
 I have no idea what you are talking about
-
-## Usage
-
-Configuration:
-Please run bin/setup to install gems
-Change input.txt at will
-
-How to use:
-ruby galaxy.rb input.txt

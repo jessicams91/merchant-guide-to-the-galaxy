@@ -27,7 +27,7 @@ describe Calculator::GalaxyUnit do
     end
 
     context "successfully" do
-      it 'should convert to 4'do
+      it do
         set_galaxy_units
         expect(Calculator::GalaxyUnit.convert_to_numeral(galaxy_units_array: ['glob', 'prok'])).to be 4
       end
