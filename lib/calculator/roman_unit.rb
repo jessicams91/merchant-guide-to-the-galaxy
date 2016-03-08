@@ -1,5 +1,5 @@
 module Calculator
-  class Roman
+  class RomanUnit
 
     attr_reader :roman_map
 
@@ -21,12 +21,12 @@ module Calculator
     ]
 
     # Converts a roman string to numeral using the roman_map
-    def self.convert_to_numeral(roman_number: required)
+    def self.convert_to_numeral(roman_string: required)
       sum = 0
       for key, value in @@roman_map
-        while roman_number.index(key) == 0
+        while roman_string.index(key) == 0
           sum += value
-          roman_number.slice!(key)
+          roman_string.slice!(key)
         end
       end
       sum
