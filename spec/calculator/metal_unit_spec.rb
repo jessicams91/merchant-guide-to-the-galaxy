@@ -16,7 +16,7 @@ describe Calculator::MetalUnit do
       it do
         set_metal_value
         metal_value = 57800 / Calculator::GalaxyUnit.convert_to_numeral(galaxy_units_array: ['glob', 'prok']).to_f
-        expect(Calculator::MetalUnit.metals_values).to have_key('Gold').and have_value(metal_value)
+        expect(Calculator::MetalUnit.get_metal_value('Gold')).to eq(metal_value)
       end
     end
 

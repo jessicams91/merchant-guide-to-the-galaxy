@@ -9,7 +9,7 @@ describe Calculator::GalaxyUnit do
     context "successfully" do
       it do
         set_galaxy_unit
-        expect(Calculator::GalaxyUnit.galaxy_units_values).to have_key('glob').and have_value('I')
+        expect(Calculator::GalaxyUnit.get_galaxy_values('glob')).to eq('I')
       end
     end
 
